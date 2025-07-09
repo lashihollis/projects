@@ -1,0 +1,43 @@
+import numpy as np --import np library
+
+np.array()--creates a numpy array usually looks like a python list
+np.genfromtxt('file', delimiter=',')--imports data from csv into an array (change delimiter based on specific file delimeter)
+
+# With an array --numpy eliminates the need for a for loop
+l = [1, 2, 3, 4, 5]
+a = np.array(l)
+a_plus_3 = a + 3
+
+
+When adding or subtracting arrays in NumPy, each element will be added/subtracted to its matching element. 
+(They have to have the same number of elements)
+>>> a = np.array([1, 2, 3, 4, 5])
+>>> b = np.array([6, 7, 8, 9, 10])
+>>> a + b
+array([ 7,  9, 11, 13, 15])
+
+If the arrays that make up our bigger array are all the same size, then it has a special name: a two-dimensional array.
+A two-dimensional array is a list of lists where each list has the same number of elements.
+
+Selecting elements from a 2-d array is very similar to selecting them from a 1-d array, we just have two indices to select from. 
+The syntax for selecting from a 2-d array is a[row,column] where a is the array.
+A two-dimensional array has two axes: axis 0 (y) represents the values that share the same indexical position (are in the same column), 
+and axis 1 (x) represents the values that share an array (are in the same row).
+
+example:
+import numpy as np
+
+student_scores = np.array([[92, 94, 88, 91, 87],
+                           [79, 100, 86, 93, 91],
+                           [87, 85, 72, 90, 92]])
+
+each row is the test # and each column is each student's grades
+
+tanya_test_3 = student_scores[2,0]
+cody_test_scores = student_scores[:,4]
+
+print(cody_test_scores)
+
+
+
+
