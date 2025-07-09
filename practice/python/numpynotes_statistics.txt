@@ -1,0 +1,59 @@
+Statistics using NumPy
+
+import numpy as np
+
+allergy_trials = np.array([[6, 1, 3, 8, 2], 
+                           [2, 6, 3, 9, 8], 
+                           [5, 2, 6, 9, 9]])
+
+total_mean = np.mean(allergy_trials)
+trial_mean = np.mean(allergy_trials, axis = 1) --row
+patient_mean = np.mean(allergy_trials, axis = 0) --column
+
+print(total_mean)
+print(trial_mean)
+print(patient_mean)
+
+--------
+np.mean()--mean or average of your array
+
+np.sort()--helps sort your array values to identify outliers
+
+np.median()--finds the median of your data set
+
+----------
+np.percentile(data_set, percentile)--shows data in your specified percentile
+    The 25th percentile is called the first quartile
+    The 50th percentile is called the median
+    The 75th percentile is called the third quartile
+The minimum, first quartile, median, third quartile, and maximum of a dataset are called a five-number summary. 
+The difference between the first and third quartile is a value called the interquartile range.
+
+50% of the dataset will lie within the interquartile range. The interquartile range gives us an idea of how spread out our data is. 
+The smaller the interquartile range value, the less variance in our dataset. The greater the value, the larger the variance.
+
+import numpy as np
+
+movies_watched = np.array([2, 3, 8, 0, 2, 4, 3, 1, 1, 0, 5, 1, 1, 7, 2])
+
+first_quarter = np.percentile(np.sort(movies_watched), 25)
+third_quarter = np.percentile(np.sort(movies_watched), 75)
+interquartile_range = third_quarter - first_quarter
+
+print(first_quarter)
+print(third_quarter)
+print(interquartile_range)
+------------------
+standard deviation
+The standard deviation tells us the spread of the data. The larger the standard deviation, the more spread out our data is from the center. 
+The smaller the standard deviation, the more the data is clustered around the mean.
+
+np.std()
+
+
+
+
+
+
+
+
